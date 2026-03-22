@@ -1,0 +1,28 @@
+-- 1. Cria a função para incrementar downloads
+CREATE OR REPLACE FUNCTION public.increment_downloads(p_game_id UUID)
+RETURNS void AS $$
+BEGIN
+  UPDATE public.games
+  SET downloads_count = COALESCE(downloads_count, 0) + 1
+  WHERE id = p_game_id;
+END;
+$$ LANGUAGE plpgsql SECURITY DEFINER;
+
+-- 2. Garante que a função de views está correta
+CREATE OR REPLACE FUNCTION public.increment_views(p_game_id UUID)
+RETURNS void AS $$
+BEGIN
+  UPDATE public.games
+  SET views_count = COALESCE(views_count, 0) + 1
+  WHERE id = p_game_id;
+END;
+$$ LANGUAGE plpgsql SECURITY DEFINER;
+
+-- 3. Remove tabela e colunas antigas de likes (se existirem)
+DROP TRIGGER IF EXISTS on_game_update_likes ON public.games;
+DROP FUNCTION IF EXISTS public.sync_likes_count();
+DROP TABLE IF EXISTS public.game_likes CASCADE;
+ALTER TABLE public.games DROP COLUMN IF EXISTS liked_by;
+
+-- 4. Garante que a coluna likes_count exista e tenha um valor padrão
+ALTER TABLE public.games ADD COLUMN IF NOT EXISTS likes_count BIGINT DEFAULT 0;

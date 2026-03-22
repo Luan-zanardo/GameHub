@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #0a0a0b;
+  --foreground: #ffffff;
+  --primary: #3b82f6;
+}
+
+@layer base {
+  body {
+    @apply bg-[#0a0a0b] text-zinc-100 selection:bg-blue-500/30;
+  }
+}
+
+.glass-card {
+  @apply bg-zinc-900 border border-white/5 rounded-xl overflow-hidden transition-all duration-200;
+}
+
+.glass-card:hover {
+  @apply border-white/10 bg-zinc-800/50;
+}
+
+.btn-primary {
+  @apply bg-blue-600 hover:bg-blue-500 text-white font-semibold py-2.5 px-5 rounded-lg transition-all flex items-center justify-center gap-2 active:scale-[0.98];
+}
+
+.btn-secondary {
+  @apply bg-zinc-800 hover:bg-zinc-700 text-white font-medium py-2.5 px-5 rounded-lg border border-white/5 transition-all flex items-center justify-center gap-2;
+}
+
+input, textarea, select {
+  @apply bg-zinc-900 border border-white/5 rounded-lg px-4 py-2.5 focus:outline-none focus:border-blue-500/50 transition-all text-zinc-200;
+}
+
+.text-gradient {
+  @apply text-white font-black;
+}
