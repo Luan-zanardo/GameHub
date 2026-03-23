@@ -31,3 +31,5 @@ Plataforma web para publicar, explorar e jogar jogos diretamente no navegador.
 ```bash
 git clone https://github.com/seu-usuario/gamehub.git
 cd gamehub
+```
+### 2. Instale as dependências
