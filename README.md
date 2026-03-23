@@ -26,19 +26,16 @@ Plataforma web para publicar, explorar e jogar jogos diretamente no navegador.
 
 ## 📦 Como rodar o projeto
 
-
-## 📦 Como rodar o projeto
-
-##1. Clone o repositório
+## 1. Clone o repositório
 
 git clone https://github.com/seu-usuario/gamehub.git
 cd gamehub
 
-##2. Instale as dependências
+## 2. Instale as dependências
 
 npm install
 
-##3. Configure as variáveis de ambiente
+## 3. Configure as variáveis de ambiente
 
 Crie um arquivo .env.local na raiz do projeto:
 
@@ -47,20 +44,20 @@ NEXT_PUBLIC_SUPABASE_ANON_KEY=your_key
 
 Você pode pegar essas informações no painel do Supabase.
 
-##4. Configure o banco de dados
+## 4. Configure o banco de dados
    
 -Acesse o Supabase
 -Vá em SQL Editor
 -Cole o script SQL do projeto
 -Execute
 
-##5. Rode o projeto
+## 5. Rode o projeto
 
 npm run dev
 
 Acesse: http://localhost:3000
 
-###SQL COMPLETO DO PROJETO:
+### SQL COMPLETO DO PROJETO:
 
 -- =========================
 -- TABELA: PROFILES
