@@ -53,16 +53,52 @@ export default function LikeButton({ gameId, initialLikes, likedBy, fileUrl }: L
     }
   }
 
+  async function handleDownload() {
+    try {
+      // Incrementar no banco primeiro
+      console.log('Incrementando download para:', gameId);
+      const { error } = await supabase.rpc('increment_downloads', { p_game_id: gameId });
+      
+      if (error) {
+        console.error('Erro no RPC increment_downloads:', error);
+        throw error;
+      }
+
+      console.log('Download incrementado com sucesso no banco');
+
+      // Criar um link temporário para forçar o download
+      const link = document.createElement('a');
+      link.href = fileUrl;
+      link.setAttribute('download', ''); // Importante para forçar o download
+      link.setAttribute('target', '_blank');
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+
+      // Aguardar um pouco antes de dar refresh para garantir que o DB processou
+      setTimeout(() => {
+        router.refresh();
+      }, 500);
+
+    } catch (error: any) {
+      console.error('Erro completo ao incrementar download:', error);
+      // Fallback: tenta baixar mesmo se o RPC falhar
+      const link = document.createElement('a');
+      link.href = fileUrl;
+      link.setAttribute('download', '');
+      link.click();
+    }
+  }
+
   return (
     <div className="flex items-center gap-2">
-      <a 
-        href={fileUrl} 
-        download 
+      <button 
+        onClick={handleDownload}
         className="btn-primary px-6 flex items-center gap-2"
       >
         <Download size={20} /> Baixar
-      </a>
-      
+      </button>
+
       <button 
         onClick={handleLike}
         disabled={actionLoading}

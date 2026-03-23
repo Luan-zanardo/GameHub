@@ -73,7 +73,7 @@ export default function Navbar() {
     return (
       <nav className="h-20 flex items-center justify-center bg-transparent">
         <Link href="/" className="flex items-center gap-2 text-2xl font-black text-white hover:text-blue-500 transition-colors">
-          <Gamepad2 size={32} className="text-blue-500" />
+          <img src="/pepe.png" alt="Logo" className="w-10 h-10 object-contain" />
           <span>GameHub</span>
         </Link>
       </nav>
@@ -86,8 +86,8 @@ export default function Navbar() {
         {/* Logo */}
         {!isMobileSearchOpen && (
           <Link href="/" className="flex items-center gap-2 text-xl font-bold hover:text-blue-500 transition-colors shrink-0">
-            <Gamepad2 size={28} className="text-blue-500" />
-            <span className="hidden sm:block tracking-tighter font-black">GAMEHUB</span>
+            <img src="/pepe.png" alt="Logo" className="w-8 h-8 object-contain" />
+            <span className="tracking-tighter font-black">GameHub</span>
           </Link>
         )}
 

@@ -72,7 +72,7 @@ export default function NotificationBell({ userId }: { userId: string }) {
       {isOpen && (
         <>
           <div className="fixed inset-0 z-[110]" onClick={() => setIsOpen(false)}></div>
-          <div className="absolute right-0 mt-4 w-80 md:w-96 bg-zinc-900 border border-white/10 rounded-2xl shadow-2xl z-[120] overflow-hidden animate-in fade-in zoom-in duration-200">
+          <div className="fixed left-4 right-4 top-20 md:absolute md:left-auto md:right-0 md:top-full md:mt-4 md:w-96 bg-zinc-900 border border-white/10 rounded-2xl shadow-2xl z-[120] overflow-hidden animate-in fade-in zoom-in duration-200">
             <div className="p-4 border-b border-white/5 flex items-center justify-between bg-zinc-800/50">
               <h3 className="font-bold text-sm">Alertas de Seguidores</h3>
               <div className="flex gap-2">

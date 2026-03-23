@@ -102,19 +102,19 @@ export default function ProfileClient({ profile, initialGames, initialFollowers,
           </div>
         )}
 
-        <div className="flex flex-col items-center gap-6">
-          <div className="flex items-center gap-8">
-            <button onClick={() => setActiveTab('followers')} className="text-center hover:opacity-70 transition-opacity">
+        <div className="flex flex-col items-center gap-6 w-full">
+          <div className="flex items-center justify-center gap-2 sm:gap-8 w-full">
+            <button onClick={() => setActiveTab('followers')} className="flex-1 sm:flex-none text-center hover:opacity-70 transition-opacity">
               <p className="text-xl font-black text-white">{followers.length}</p>
-              <p className="text-[10px] text-zinc-500 uppercase font-bold tracking-widest">Seguidores</p>
+              <p className="text-xs text-zinc-500 uppercase font-bold tracking-widest">Seguidores</p>
             </button>
-            <button onClick={() => setActiveTab('following')} className="text-center hover:opacity-70 transition-opacity">
+            <button onClick={() => setActiveTab('following')} className="flex-1 sm:flex-none text-center hover:opacity-70 transition-opacity">
               <p className="text-xl font-black text-white">{following.length}</p>
-              <p className="text-[10px] text-zinc-500 uppercase font-bold tracking-widest">Seguindo</p>
+              <p className="text-xs text-zinc-500 uppercase font-bold tracking-widest">Seguindo</p>
             </button>
-            <button onClick={() => setActiveTab('games')} className="text-center hover:opacity-70 transition-opacity">
+            <button onClick={() => setActiveTab('games')} className="flex-1 sm:flex-none text-center hover:opacity-70 transition-opacity">
               <p className="text-xl font-black text-white">{initialGames.length}</p>
-              <p className="text-[10px] text-zinc-500 uppercase font-bold tracking-widest">Jogos</p>
+              <p className="text-xs text-zinc-500 uppercase font-bold tracking-widest">Jogos</p>
             </button>
           </div>
 
@@ -139,10 +139,10 @@ export default function ProfileClient({ profile, initialGames, initialFollowers,
 
       {/* Tabs */}
       <section className="space-y-8">
-        <div className="flex items-center gap-8 border-b border-white/5 pb-0 overflow-x-auto no-scrollbar">
-          <button onClick={() => setActiveTab('games')} className={`font-bold pb-4 border-b-2 transition-all whitespace-nowrap ${activeTab === 'games' ? 'border-blue-500 text-white' : 'border-transparent text-zinc-500'}`}>JOGOS ({initialGames.length})</button>
-          <button onClick={() => setActiveTab('followers')} className={`font-bold pb-4 border-b-2 transition-all whitespace-nowrap ${activeTab === 'followers' ? 'border-blue-500 text-white' : 'border-transparent text-zinc-500'}`}>SEGUIDORES ({followers.length})</button>
-          <button onClick={() => setActiveTab('following')} className={`font-bold pb-4 border-b-2 transition-all whitespace-nowrap ${activeTab === 'following' ? 'border-blue-500 text-white' : 'border-transparent text-zinc-500'}`}>SEGUINDO ({following.length})</button>
+        <div className="flex items-center gap-6 md:gap-8 border-b border-white/5 pb-0 overflow-x-auto no-scrollbar scroll-smooth">
+          <button onClick={() => setActiveTab('games')} className={`font-bold text-xs md:text-sm pb-4 border-b-2 transition-all whitespace-nowrap uppercase tracking-wider ${activeTab === 'games' ? 'border-blue-500 text-white' : 'border-transparent text-zinc-500'}`}>JOGOS ({initialGames.length})</button>
+          <button onClick={() => setActiveTab('followers')} className={`font-bold text-xs md:text-sm pb-4 border-b-2 transition-all whitespace-nowrap uppercase tracking-wider ${activeTab === 'followers' ? 'border-blue-500 text-white' : 'border-transparent text-zinc-500'}`}>SEGUIDORES ({followers.length})</button>
+          <button onClick={() => setActiveTab('following')} className={`font-bold text-xs md:text-sm pb-4 border-b-2 transition-all whitespace-nowrap uppercase tracking-wider ${activeTab === 'following' ? 'border-blue-500 text-white' : 'border-transparent text-zinc-500'}`}>SEGUINDO ({following.length})</button>
         </div>
 
         <div className="min-h-[300px]">
