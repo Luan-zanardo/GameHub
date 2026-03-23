@@ -46,10 +46,10 @@ Você pode pegar essas informações no painel do Supabase.
 
 ## 4. Configure o banco de dados
    
--Acesse o Supabase
--Vá em SQL Editor
--Cole o script SQL do projeto
--Execute
+- Acesse o Supabase
+- Vá em SQL Editor
+- Cole o script SQL do projeto
+- Execute
 
 ## 5. Rode o projeto
 
