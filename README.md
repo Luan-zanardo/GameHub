@@ -192,4 +192,11 @@ GRANT EXECUTE ON FUNCTION public.increment_views(UUID) TO anon, authenticated;
 GRANT EXECUTE ON FUNCTION public.increment_downloads(UUID) TO anon, authenticated;
 GRANT EXECUTE ON FUNCTION public.handle_game_like(UUID) TO authenticated;
 ```
-  
+
+### 5. Rodar o projeto
+
+```bash
+npm run dev
+```
+
+Acesse: http://localhost:3000
